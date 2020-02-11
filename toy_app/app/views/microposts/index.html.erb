@@ -14,9 +14,9 @@
   <tbody>
     <% @microposts.each do |micropost| %>
       <tr>
-        <td><%= micropost.content %></td>
-        <td><%= micropost.user_id %></td>
-        <td><%= link_to 'Show', micropost %></td>
+        <td><%= link_to "#{micropost.content}", micropost %></td>
+        <td><%= link_to "#{micropost.user.name}", micropost.user %></td>
+
         <td><%= link_to 'Edit', edit_micropost_path(micropost) %></td>
         <td><%= link_to 'Destroy', micropost, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
