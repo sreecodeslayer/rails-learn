@@ -1,5 +1,18 @@
-<h1>New User</h1>
+<% provide(:title, 'Sign up') %>
+<h1>Sign up</h1>
+<%= form_with(model: @user, local: true) do |f| %>
+  <%= render "shared/error_messages" %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
 
-<%= render 'form', user: @user %>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
 
-<%= link_to 'Back', users_path %>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %>
+  <br/>
+  <%= f.submit "Sign Up" %>
+<% end %>

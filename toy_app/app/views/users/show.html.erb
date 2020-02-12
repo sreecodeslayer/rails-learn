@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<%= gravatar_for(@user) %>
 <p>
   <strong>Name:</strong>
   <%= @user.name %>
@@ -12,7 +13,7 @@
 
 <p>
   <strong>Latest post:</strong>
-  <%= @user.microposts.length > 0 ? @user.microposts.last.content : "No microposts by the user" %>
+  <%= @user.microposts.any? ? @user.microposts.last.content : "No microposts by the user" %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
